@@ -24,8 +24,8 @@
 
 import CoreBluetooth
 
-public func ==(lhs: BKDiscovery, rhs: BKDiscovery) -> Bool {
-    return lhs.remotePeripheral == rhs.remotePeripheral
+public func == (lhs: BKDiscovery, rhs: BKDiscovery) -> Bool {
+    return lhs.remotePeripheral == rhs.remotePeripheral && lhs.advertisementData["kCBAdvDataManufacturerData"]! as! NSData == rhs.advertisementData["kCBAdvDataManufacturerData"]! as! NSData
 }
 
 /**
