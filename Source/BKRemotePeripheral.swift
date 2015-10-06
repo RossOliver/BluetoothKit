@@ -100,7 +100,7 @@ public class BKRemotePeripheral: BKCBPeripheralDelegate, Equatable {
     /// The unique identifier of the remote peripheral object.
     public let identifier: NSUUID
     
-    internal var peripheral: CBPeripheral?
+    public var peripheral: CBPeripheral?
     internal var configuration: BKConfiguration?
     
     private var data: NSMutableData?
