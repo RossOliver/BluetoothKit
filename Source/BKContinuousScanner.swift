@@ -88,6 +88,8 @@ internal class BKContinousScanner {
             state = .Scanning
             stateHandler?(newState: state)
             try scanner.scanWithDuration(duration, progressHandler: { newDiscoveries in
+                // fixes issue with RSSI not updating
+                self.maintainedDiscoveries = []
                 let actualDiscoveries = newDiscoveries.filter({ !self.maintainedDiscoveries.contains($0) })
                 if !actualDiscoveries.isEmpty {
                     self.maintainedDiscoveries += actualDiscoveries
